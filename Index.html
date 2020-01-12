@@ -55,7 +55,7 @@
 
     </div>
 
-    <div class="container border border-dark mt-5">
+    <div class="container border border-dark mt-5  mb-5">
       <div class="row search p-2 bg-secondary p-2 bg-secondary text-light font-weight-bold" id="topArticles">
         <p>  <i class="far fa-newspaper"></i>  Top Articles</p>
       </div>
@@ -81,7 +81,7 @@
         method: "GET"
       }).then(function (res) {
         for (var i = 0; i < number; i++) {
-        
+        console.log(res);
           var newDivRow = $("<div>");
           newDivRow.addClass("row border m-2  ");
           var newDivCol = $("<div>");
@@ -89,11 +89,17 @@
    
           newDivRow.append(newDivCol);
           var headline = $("<P>");
+          var newsLink = $("<a>");
           var source = $("<P>");
+
+          newsLink.addClass("btn btn-info");
+          newsLink.attr({"href": res.response.docs[i].web_url, "target":"_blank"});
           headline.text(res.response.docs[i].headline.main);
+          newsLink.text('Click Here To Read More...')
           source.text('Author - '+res.response.docs[i].source);
 
           newDivCol.append(headline);
+          newDivCol.append(newsLink);
           newDivCol.append(source);
           $("#insertHere").append(newDivRow);
         }
