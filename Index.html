@@ -1,115 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-        crossorigin="anonymous"
-        />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-      </head>
-    <body>
-            <div class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>NYT-API-Search</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
     <div class="navContainer mb-2">
-            <nav class="navbar navbar-light bg-warning d-flex justify-content-center">
-                    <span class="navbar-brand mb-0 h1"><i class="far fa-newspaper"></i></i>  New York Times Search</span>
-                  </nav>
+      <nav class="navbar navbar-light bg-warning d-flex justify-content-center">
+        <span class="navbar-brand mb-0 h1"><i class="far fa-newspaper"></i></i> New York Times Search</span>
+      </nav>
     </div>
-                  <div class="container border border-dark">
-                        
-                    <div class="search d-flex pl-2 bg-secondary ">
-                        search parameters
-                    </div>
-                        <form>
-                                <div class="form-group">
-                                  <label for="exampleFormControlInput1">Search Term</label>
-                                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
-                                  <label for="exampleFormControlSelect1">Example select</label>
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    </select>
-                                
-                        
-                               
-                                  <label for="exampleFormControlInput1">Start Year (Optional):</label>
-                                  <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="">
-                               
-                                  <label for="exampleFormControlInput1">End Year (Optional):</label>
-                                  <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="">
-                                  <button type="button" class="btn btn-primary mt-2" id="searchBtn"> <i class="fas fa-search"></i> Search</button> <button type="button" class="btn btn-primary mt-2" id="clearBtn"> <i class="far fa-trash-alt"></i> Clear Results</button>
-                               
-                                  
-                                </div>
-                                
-                            </form>     
-                    
-                  </div>
-                
-                
-                    <div class="container border border-dark mt-5" id="insertHere">
-                        
-                            <div class="search d-flex pl-2 bg-secondary " id="topArticles">
-                                Top Articles
-                            </div>
-                                
-                                       
-                            
-                          </div>
-                  
-                        </div>
+    <div class="container border border-dark">
+
+      <div class="row search d-flex p-2 bg-secondary text-light font-weight-bold ">
+        <p> <i class="far fa-newspaper"></i>  Search parameters</p>
+      </div>
+      <form>
+        <div class="form-group pt-3">
+          <label for="exampleFormControlInput1">Search Term</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+          <label for="exampleFormControlSelect1">Example select</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+
+          <label for="exampleFormControlInput1">Start Year (Optional):</label>
+          <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="">
+
+          <label for="exampleFormControlInput1">End Year (Optional):</label>
+          <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="">
+          <button type="button" class="btn btn-primary mt-2" id="searchBtn"> <i class="fas fa-search"></i>
+            Search</button> <button type="button" class="btn btn-primary mt-2" id="clearBtn"> <i
+              class="far fa-trash-alt"></i> Clear Results</button>
+
+
+        </div>
+
+      </form>
+
+    </div>
+
+    <div class="container border border-dark mt-5">
+      <div class="row search p-2 bg-secondary p-2 bg-secondary text-light font-weight-bold" id="topArticles">
+        <p>  <i class="far fa-newspaper"></i>  Top Articles</p>
+      </div>
+      <div id="insertHere">
+
+      </div>
+    </div>
+  </div>
 
   <script type="text/javascript">
-    
+    $("#searchBtn").click(function (event) {
+      event.preventDefault();
+      var beginDate = $("#exampleFormControlInput2").val();
+      var endDate = $("#exampleFormControlInput3").val();
+      var searchTerm = $("#exampleFormControlInput1").val();
+      var APIKey = "eIZ07IAiH6ikPitXtlcZTeGysT75o4qV";
+      var qURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm +
+        "&facet_fields=source&facet=true&begin_date=" + beginDate + "0101&end_date=" + endDate + "1231&api-key=" + APIKey;
+      var number = $("#exampleFormControlSelect1").val();
 
-// console.log(beginDate, endDate, searchTerm, number);
-
-    $("#searchBtn").click(function () {
-        // console.log(beginDate, endDate, searchTerm, number);
-        var beginDate = $("#exampleFormControlInput2").val();
-    var endDate = $("#exampleFormControlInput3").val();
-    var searchTerm = $("#exampleFormControlInput1").val();
-    var APIKey = "eIZ07IAiH6ikPitXtlcZTeGysT75o4qV";
-    var qURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm + "&facet_fields=source&facet=true&begin_date=" + beginDate + "0101&end_date=" + endDate +"1231&api-key=" + APIKey;
-    var number = $("#exampleFormControlSelect1").val();
-
-        $.ajax({
+      $.ajax({
         url: qURL,
         method: "GET"
-      }).then(function(response){
-        var i = 0;
-        console.log(qURL);
-          console.log(response);
-          console.log(response.response.docs);
-          console.log(response.response.docs[i].headline.main);
-          console.log(response.response.docs[i].source);
-          for (i = 0; i < number; i++) {
-              newDiv = $("<div>");
-              newDiv.append(response.response.docs[i].headline.main);
-              newDiv.append(response.response.docs[i].source);
-              $("#insertHere").append(newDiv);
-          }
-      }
-      )})
+      }).then(function (res) {
+        for (var i = 0; i < number; i++) {
+        
+          var newDivRow = $("<div>");
+          newDivRow.addClass("row border m-2  ");
+          var newDivCol = $("<div>");
+          newDivCol.addClass("col-sm-12");
+   
+          newDivRow.append(newDivCol);
+          var headline = $("<P>");
+          var source = $("<P>");
+          headline.text(res.response.docs[i].headline.main);
+          source.text('Author - '+res.response.docs[i].source);
 
-      $("clearBtn").click(function(){
-          $("#searchTerm").empty();
-          $("#numberTerms").empty();
-          $("#startYear").empty();
-          $("#endYear").empty();
+          newDivCol.append(headline);
+          newDivCol.append(source);
+          $("#insertHere").append(newDivRow);
+        }
       })
+    })
 
+    $("#clearBtn").click(function () {
+      $("#insertHere").empty();
+      $("#exampleFormControlInput1").val('');
+      $("#exampleFormControlSelect1").val('');
+      $("#exampleFormControlInput2").val('');
+      $("#exampleFormControlInput3").val('');
+    });
   </script>
 </body>
 
